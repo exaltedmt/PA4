@@ -74,7 +74,7 @@ for buildingID in bldgs_keys:
 
 # Hottest Building Times
 print '\nHottest Three Building\'s Recorded Times & Temperatures:'
-print 'Bldg\tTimes & Temperatures'
+print 'Bldg\tTimes\tTemperatures'
 for buildingID in bldgs_keys:
     print '%s\t%s\t%s' % (buildingID, bldgTimes[buildingID], bldgTemps[buildingID])
     
