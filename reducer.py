@@ -40,7 +40,7 @@ for line in sys.stdin:
             bldgTimes[buildingID] = []
             bldgTemps[buildingID] = []
             bldgTimes[buildingID].append(time)
-            bldgTemps[buildingID].append(actualTemp)
+            bldgTemps[buildingID].append(float(actualTemp))
                 
 #Reducer
 # Turns all differences into one average.
@@ -76,5 +76,8 @@ for buildingID in bldgs_keys:
 print '\nHottest Three Building\'s Recorded Times & Temperatures:'
 print 'Bldg\tTimes\tTemperatures'
 for buildingID in bldgs_keys:
-    print '%s\t%s\t%s' % (buildingID, bldgTimes[buildingID], bldgTemps[buildingID])
-    
+    for x in range(len(bldgTimes[buildingID])):
+        if x == 0:
+            print '%s\t%s\t%s' % (buildingID, bldgTimes[buildingID][x], bldgTemps[buildingID][x])
+        else:
+            print '%s\t%s\t%s' % ('', bldgTimes[buildingID][x], bldgTemps[buildingID][x])
